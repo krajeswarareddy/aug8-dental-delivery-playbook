@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Aug8 Agency — Complete Delivery Playbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:    #0a1628;
+  --blue:    #1e5fbb;
+  --blue2:   #0099cc;
+  --accent:  #00c2ff;
+  --green:   #10b981;
+  --orange:  #f59e0b;
+  --red:     #ef4444;
+  --purple:  #8b5cf6;
+  --font-h:  'Sora', sans-serif;
+  --font-b:  'DM Sans', sans-serif;
+  --font-m:  'JetBrains Mono', monospace;
+}
+body { font-family: var(--font-b); background: #f0f4fa; color: #1e293b; line-height: 1.6; }
+a { color: var(--blue); }
+
+/* ── COVER ── */
+.cover {
+  background: linear-gradient(135deg, #0a1628 0%, #0f3460 55%, #0d2e6b 100%);
+  padding: 80px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 40%, rgba(0,194,255,.18) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(16,185,129,.1) 0%, transparent 50%);
+}
+.cover-inner { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; }
+.cover-badge {
+  display: inline-block;
+  background: rgba(0,194,255,.15);
+  border: 1px solid rgba(0,194,255,.4);
+  color: #00c2ff;
+  font-family: var(--font-h); font-weight: 700; font-size: .78rem;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: 8px 20px; border-radius: 50px; margin-bottom: 28px;
+}
+.cover h1 {
+  font-family: var(--font-h); font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  color: #fff; line-height: 1.12; margin-bottom: 18px;
+}
+.cover h1 span { color: #00c2ff; }
+.cover p { font-size: 1.1rem; color: rgba(255,255,255,.7); max-width: 620px; margin: 0 auto 40px; line-height: 1.75; }
+.cover-stats {
+  display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+  margin-top: 48px; padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.cstat { text-align: center; }
+.cstat-val { font-family: var(--font-h); font-weight: 800; font-size: 1.8rem; color: #00c2ff; }
+.cstat-label { font-size: .8rem; color: rgba(255,255,255,.55); margin-top: 4px; }
+
+/* ── TOC ── */
+.toc-wrap {
+  max-width: 1000px; margin: 48px auto; padding: 0 24px;
+}
+.toc-card {
+  background: #fff; border-radius: 20px; padding: 36px 40px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 24px rgba(10,22,40,.07);
+}
+.toc-card h2 {
+  font-family: var(--font-h); font-weight: 800; font-size: 1.4rem;
+  color: var(--navy); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 10px;
+}
+.toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
+.toc-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: .9rem; color: #374151; padding: 8px 0;
+  border-bottom: 1px solid #f1f5f9; text-decoration: none;
+  transition: color .15s;
+}
+.toc-item:hover { color: var(--blue); }
+.toc-num {
+  width: 26px; height: 26px; border-radius: 8px;
+  background: var(--navy); color: #fff;
+  font-family: var(--font-h); font-weight: 700; font-size: .72rem;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+
+/* ── SECTION WRAPPER ── */
+.section-wrap {
+  max-width: 1000px; margin: 0 auto 60px; padding: 0 24px;
+}
+
+/* ── SECTION HEADER ── */
+.sec-header {
+  background: linear-gradient(135deg, var(--navy), #0f3460);
+  border-radius: 20px 20px 0 0;
+  padding: 36px 40px;
+}
+.sec-header .plan-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-h); font-weight: 700; font-size: .72rem;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 50px; margin-bottom: 14px;
+}
+.badge-gray   { background: rgba(96,125,139,.25); color: #b0bec5; border: 1px solid rgba(96,125,139,.4); }
+.badge-green  { background: rgba(46,158,115,.25); color: #4ade80; border: 1px solid rgba(46,158,115,.4); }
+.badge-blue   { background: rgba(0,153,204,.25);  color: #38bdf8; border: 1px solid rgba(0,153,204,.4); }
+.badge-orange { background: rgba(224,123,26,.25); color: #fb923c; border: 1px solid rgba(224,123,26,.4); }
+.badge-purple { background: rgba(139,92,246,.25); color: #c4b5fd; border: 1px solid rgba(139,92,246,.4); }
+.badge-teal   { background: rgba(16,185,129,.25); color: #6ee7b7; border: 1px solid rgba(16,185,129,.4); }
+
+.sec-header h2 {
+  font-family: var(--font-h); font-weight: 800;
+  font-size: clamp(1.6rem, 3vw, 2.4rem); color: #fff; margin-bottom: 10px;
+}
+.sec-header p { font-size: .97rem; color: rgba(255,255,255,.65); max-width: 680px; line-height: 1.7; }
+.plan-price-row {
+  display: flex; gap: 20px; margin-top: 24px; flex-wrap: wrap;
+}
+.price-chip {
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+  border-radius: 12px; padding: 12px 18px;
+  display: flex; flex-direction: column;
+}
+.price-chip-label { font-size: .7rem; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 2px; font-family: var(--font-h); font-weight: 600; }
+.price-chip-val { font-family: var(--font-h); font-weight: 800; font-size: 1.15rem; color: #fff; }
+.price-chip-val.accent { color: #00c2ff; }
+
+/* ── CONTENT CARD ── */
+.content-card {
+  background: #fff; border-radius: 0 0 20px 20px;
+  border: 1px solid #e2e8f0; border-top: none;
+  box-shadow: 0 8px 32px rgba(10,22,40,.08);
+}
+.cc-section { padding: 36px 40px; border-bottom: 1px solid #f1f5f9; }
+.cc-section:last-child { border-bottom: none; }
+
+.step-title {
+  font-family: var(--font-h); font-weight: 800;
+  font-size: 1.15rem; color: var(--navy);
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+}
+.step-badge {
+  font-size: .7rem; font-family: var(--font-h); font-weight: 800;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 50px;
+}
+.sb-blue   { background: #dbeafe; color: var(--blue); }
+.sb-green  { background: #dcfce7; color: #15803d; }
+.sb-orange { background: #fef3c7; color: #b45309; }
+.sb-purple { background: #ede9fe; color: #7c3aed; }
+.sb-red    { background: #fee2e2; color: #b91c1c; }
+.sb-teal   { background: #d1fae5; color: #065f46; }
+.sb-gray   { background: #f1f5f9; color: #475569; }
+
+.prose { font-size: .94rem; color: #4b5563; line-height: 1.8; margin-bottom: 16px; }
+.prose strong { color: var(--navy); font-weight: 700; }
+.prose:last-child { margin-bottom: 0; }
+
+/* Step-by-step boxes */
+.steps-list { list-style: none; margin-top: 16px; }
+.steps-list > li {
+  display: flex; gap: 16px; margin-bottom: 20px;
+  align-items: flex-start;
+}
+.step-num-circle {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--accent));
+  color: #fff; font-family: var(--font-h); font-weight: 800; font-size: .82rem;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  margin-top: 2px;
+}
+.step-num-circle.green  { background: linear-gradient(135deg, #10b981, #34d399); }
+.step-num-circle.orange { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+.step-num-circle.purple { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+.step-num-circle.red    { background: linear-gradient(135deg, #ef4444, #f87171); }
+.step-body h5 { font-family: var(--font-h); font-weight: 700; font-size: .92rem; color: var(--navy); margin-bottom: 4px; }
+.step-body p  { font-size: .87rem; color: #6b7280; line-height: 1.65; }
+.step-body .code-pill {
+  display: inline-block;
+  background: #1e293b; color: #7dd3fc;
+  font-family: var(--font-m); font-size: .78rem;
+  padding: 3px 10px; border-radius: 6px; margin-top: 6px; margin-right: 4px;
+}
+
+/* Tool cards */
+.tools-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 16px; }
+.tool-card {
+  border: 1px solid #e2e8f0; border-radius: 14px; padding: 18px;
+  background: #fafbff;
+  transition: box-shadow .2s;
+}
+.tool-card:hover { box-shadow: 0 4px 18px rgba(10,22,40,.1); }
+.tool-icon { font-size: 1.6rem; margin-bottom: 8px; }
+.tool-name { font-family: var(--font-h); font-weight: 700; font-size: .88rem; color: var(--navy); margin-bottom: 4px; }
+.tool-desc { font-size: .78rem; color: #6b7280; line-height: 1.5; margin-bottom: 8px; }
+.tool-cost {
+  display: inline-block;
+  background: #dbeafe; color: var(--blue);
+  font-family: var(--font-h); font-weight: 700; font-size: .72rem;
+  padding: 3px 10px; border-radius: 50px;
+}
+.tool-cost.free { background: #dcfce7; color: #15803d; }
+.tool-cost.paid { background: #fef3c7; color: #b45309; }
+
+/* Info boxes */
+.info-box {
+  border-radius: 14px; padding: 18px 20px; margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.info-box.blue   { background: #eff6ff; border: 1px solid #bfdbfe; }
+.info-box.green  { background: #f0fdf4; border: 1px solid #bbf7d0; }
+.info-box.orange { background: #fffbeb; border: 1px solid #fde68a; }
+.info-box.red    { background: #fef2f2; border: 1px solid #fecaca; }
+.info-box.purple { background: #faf5ff; border: 1px solid #e9d5ff; }
+.info-box.dark   { background: var(--navy); border: 1px solid #1e3a5f; }
+.info-box-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
+.info-box-body h5 { font-family: var(--font-h); font-weight: 700; font-size: .88rem; color: var(--navy); margin-bottom: 4px; }
+.info-box.dark .info-box-body h5 { color: #fff; }
+.info-box-body p { font-size: .84rem; color: #4b5563; line-height: 1.65; }
+.info-box.dark .info-box-body p { color: rgba(255,255,255,.65); }
+
+/* Checklist */
+.checklist { list-style: none; margin-top: 12px; }
+.checklist li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: .9rem; color: #374151; margin-bottom: 9px; line-height: 1.5;
+}
+.checklist li .ck { color: #10b981; font-weight: 800; font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+.checklist li .ck.blue { color: var(--blue); }
+.checklist li .ck.orange { color: #f59e0b; }
+.checklist li .ck.purple { color: #8b5cf6; }
+
+/* Code block */
+.code-block {
+  background: #0f172a; border-radius: 12px;
+  padding: 20px 24px; margin: 16px 0;
+  font-family: var(--font-m); font-size: .82rem;
+  color: #94a3b8; line-height: 1.8; overflow-x: auto;
+}
+.code-block .c-green  { color: #86efac; }
+.code-block .c-blue   { color: #7dd3fc; }
+.code-block .c-yellow { color: #fde68a; }
+.code-block .c-gray   { color: #64748b; }
+.code-block .c-white  { color: #f8fafc; }
+
+/* Flow diagram */
+.flow { display: flex; align-items: center; gap: 0; flex-wrap: wrap; margin: 20px 0; }
+.flow-step {
+  background: var(--navy); color: #fff;
+  font-family: var(--font-h); font-weight: 700; font-size: .78rem;
+  padding: 10px 16px; border-radius: 10px; text-align: center;
+  min-width: 120px; line-height: 1.4;
+}
+.flow-step .fs-icon { font-size: 1.2rem; display: block; margin-bottom: 4px; }
+.flow-step.accent { background: linear-gradient(135deg, var(--blue), var(--accent)); }
+.flow-step.green  { background: linear-gradient(135deg, #059669, #10b981); }
+.flow-step.orange { background: linear-gradient(135deg, #d97706, #f59e0b); }
+.flow-arrow { color: #94a3b8; font-size: 1.2rem; padding: 0 8px; flex-shrink: 0; }
+
+/* Cost table */
+.cost-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: .88rem; }
+.cost-table th {
+  background: var(--navy); color: #fff;
+  font-family: var(--font-h); font-weight: 700; font-size: .78rem;
+  padding: 12px 16px; text-align: left; letter-spacing: .04em;
+}
+.cost-table th:first-child { border-radius: 10px 0 0 0; }
+.cost-table th:last-child  { border-radius: 0 10px 0 0; }
+.cost-table td { padding: 11px 16px; border-bottom: 1px solid #f1f5f9; color: #374151; }
+.cost-table tr:last-child td { border-bottom: none; }
+.cost-table tr:hover td { background: #f8faff; }
+.cost-table .green-val { color: #10b981; font-family: var(--font-h); font-weight: 700; }
+.cost-table .blue-val  { color: var(--blue); font-family: var(--font-h); font-weight: 700; }
+.cost-table .orange-val { color: #f59e0b; font-family: var(--font-h); font-weight: 700; }
+.cost-table .profit-row td { background: #f0fdf4; font-weight: 700; }
+
+/* Timeline bar */
+.timeline { margin: 16px 0; }
+.tl-item { display: flex; gap: 16px; margin-bottom: 0; position: relative; }
+.tl-item:not(:last-child)::after {
+  content: '';
+  position: absolute; left: 15px; top: 34px;
+  width: 2px; height: calc(100% - 4px);
+  background: #e2e8f0;
+}
+.tl-dot {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  background: var(--blue); display: flex; align-items: center; justify-content: center;
+  font-size: .8rem; color: #fff; font-weight: 700; position: relative; z-index: 1;
+  margin-top: 4px;
+}
+.tl-dot.green  { background: var(--green); }
+.tl-dot.orange { background: var(--orange); }
+.tl-dot.purple { background: var(--purple); }
+.tl-content { padding-bottom: 28px; }
+.tl-content h5 { font-family: var(--font-h); font-weight: 700; font-size: .9rem; color: var(--navy); margin-bottom: 4px; }
+.tl-content p { font-size: .84rem; color: #6b7280; line-height: 1.65; }
+
+/* Tip box */
+.tip-box {
+  background: linear-gradient(135deg, #0a1628, #0f3460);
+  border-radius: 14px; padding: 20px 24px; margin: 20px 0;
+  border-left: 4px solid var(--accent);
+}
+.tip-box .tip-label {
+  font-family: var(--font-h); font-weight: 800; font-size: .72rem;
+  color: var(--accent); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px;
+}
+.tip-box p { font-size: .88rem; color: rgba(255,255,255,.75); line-height: 1.7; }
+.tip-box strong { color: #fff; }
+
+/* Platform cards 2col */
+.platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.platform-card {
+  border: 1px solid #e2e8f0; border-radius: 14px;
+  overflow: hidden;
+}
+.platform-head {
+  padding: 14px 18px;
+  font-family: var(--font-h); font-weight: 800; font-size: .9rem;
+  display: flex; align-items: center; gap: 8px;
+}
+.ph-blue   { background: #1877f2; color: #fff; }
+.ph-green  { background: #25d366; color: #fff; }
+.ph-gray   { background: #374151; color: #fff; }
+.ph-orange { background: #e07b1a; color: #fff; }
+.ph-purple { background: #7c3aed; color: #fff; }
+.platform-body { padding: 16px 18px; background: #fafbff; }
+.platform-body ul { list-style: none; }
+.platform-body ul li {
+  font-size: .83rem; color: #4b5563; margin-bottom: 7px;
+  display: flex; gap: 8px; align-items: flex-start;
+}
+.platform-body ul li::before { content: '→'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+
+/* Video resources */
+.video-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 16px; }
+.video-card {
+  background: var(--navy); border-radius: 14px; overflow: hidden;
+  transition: transform .2s;
+}
+.video-card:hover { transform: translateY(-3px); }
+.video-thumb {
+  height: 90px;
+  background: linear-gradient(135deg, #1e3a5f, #0f3460);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+}
+.video-info { padding: 12px 14px; }
+.video-info h5 { font-family: var(--font-h); font-weight: 700; font-size: .8rem; color: #fff; margin-bottom: 4px; line-height: 1.4; }
+.video-info p { font-size: .72rem; color: rgba(255,255,255,.5); }
+
+/* Section divider */
+.section-break {
+  max-width: 1000px; margin: 20px auto 0; padding: 0 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.section-break hr { flex: 1; border: none; border-top: 2px dashed #e2e8f0; }
+.section-break span {
+  font-family: var(--font-h); font-weight: 700; font-size: .75rem;
+  color: #94a3b8; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap;
+}
+
+/* Automation workflow */
+.workflow-card {
+  background: #0f172a; border-radius: 16px; padding: 28px;
+  margin-top: 16px;
+}
+.wf-title { font-family: var(--font-h); font-weight: 700; font-size: .85rem; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 18px; }
+.wf-step {
+  display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;
+  position: relative;
+}
+.wf-step:not(:last-child)::after {
+  content: '';
+  position: absolute; left: 19px; top: 40px;
+  width: 2px; height: calc(100% - 10px);
+  background: rgba(0,194,255,.3);
+}
+.wf-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+.wfi-trigger { background: rgba(0,194,255,.2); border: 1px solid rgba(0,194,255,.4); }
+.wfi-action  { background: rgba(16,185,129,.2); border: 1px solid rgba(16,185,129,.4); }
+.wfi-wait    { background: rgba(245,158,11,.2); border: 1px solid rgba(245,158,11,.4); }
+.wfi-end     { background: rgba(139,92,246,.2); border: 1px solid rgba(139,92,246,.4); }
+.wf-body { padding-bottom: 22px; }
+.wf-body h5 { font-family: var(--font-h); font-weight: 700; font-size: .88rem; color: #e2e8f0; margin-bottom: 3px; }
+.wf-body p  { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.6; }
+.wf-tag {
+  display: inline-block; font-family: var(--font-m); font-size: .72rem;
+  padding: 2px 8px; border-radius: 4px; margin-top: 5px;
+}
+.wft-trigger { background: rgba(0,194,255,.15); color: #7dd3fc; }
+.wft-action  { background: rgba(16,185,129,.15); color: #6ee7b7; }
+.wft-wait    { background: rgba(245,158,11,.15); color: #fde68a; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cover { padding: 60px 24px; }
+  .toc-grid { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: 1fr 1fr; }
+  .platform-grid { grid-template-columns: 1fr; }
+  .video-grid { grid-template-columns: 1fr 1fr; }
+  .cc-section { padding: 24px; }
+  .sec-header { padding: 28px 24px; }
+}
+@media (max-width: 500px) {
+  .tools-grid { grid-template-columns: 1fr; }
+  .video-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ COVER ══════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-badge">⚡ Internal Operations Document</div>
+    <h1>Aug8 Agency<br/><span>Complete Delivery Playbook</span></h1>
+    <p>The end-to-end step-by-step system for delivering every service in every plan — from signing a client to running a fully automated dental growth machine. Built for operators with zero prior experience.</p>
+    <div class="cover-stats">
+      <div class="cstat"><div class="cstat-val">4</div><div class="cstat-label">Packages Covered</div></div>
+      <div class="cstat"><div class="cstat-val">1</div><div class="cstat-label">Master Tool (GHL)</div></div>
+      <div class="cstat"><div class="cstat-val">65%+</div><div class="cstat-label">Profit Margin</div></div>
+      <div class="cstat"><div class="cstat-val">5min</div><div class="cstat-label">Lead Alert Speed</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TABLE OF CONTENTS ══════════════════════════════════ -->
+<div class="toc-wrap">
+  <div class="toc-card">
+    <h2>📋 Table of Contents</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#foundation"><div class="toc-num">01</div> Foundation — Your Master Tool Stack</a>
+      <a class="toc-item" href="#plan1"><div class="toc-num">02</div> Plan 1 — Practice Launch ($1,997/mo)</a>
+      <a class="toc-item" href="#plan2"><div class="toc-num">03</div> Plan 2 — Practice Essentials ($2,697/mo)</a>
+      <a class="toc-item" href="#plan3"><div class="toc-num">04</div> Plan 3 — Practice Builder ($3,497/mo)</a>
+      <a class="toc-item" href="#plan4"><div class="toc-num">05</div> Plan 4 — Market Dominator ($4,997/mo)</a>
+      <a class="toc-item" href="#adspend"><div class="toc-num">06</div> Meta Ads — Full Campaign Guide</a>
+      <a class="toc-item" href="#alert"><div class="toc-num">07</div> 5-Min Alert — Full Automation Setup</a>
+      <a class="toc-item" href="#reputation"><div class="toc-num">08</div> Reputation Management System</a>
+      <a class="toc-item" href="#onboarding"><div class="toc-num">09</div> Client Onboarding Checklist</a>
+      <a class="toc-item" href="#finances"><div class="toc-num">10</div> Your Profit & Cost Breakdown</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 01: FOUNDATION                                 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-wrap" id="foundation">
+  <div class="sec-header">
+    <div class="plan-badge badge-teal">Section 01 — Foundation</div>
+    <h2>🛠️ Your Master Tool Stack</h2>
+    <p>Before you deliver any service, you need exactly two accounts set up. Everything — websites, CRM, lead alerts, reputation, SMS, email — runs from one single platform. This is the foundation of Aug8 Agency.</p>
+  </div>
+  <div class="content-card">
+
+    <div class="cc-section">
+      <div class="step-title">🏆 GoHighLevel (GHL) — Your One Platform for Everything
+        <span class="step-badge sb-blue">Required — Set Up First</span>
+      </div>
+      <p class="prose"><strong>GoHighLevel costs $297/month</strong> and replaces $2,000+/month in individual software. It is purpose-built for agencies exactly like Aug8. Every client gets their own "sub-account" inside your GHL — completely white-labeled under your brand.</p>
+
+      <div class="info-box dark">
+        <div class="info-box-icon">⚡</div>
+        <div class="info-box-body">
+          <h5>What GHL Replaces (You Don't Need to Buy Any of These)</h5>
+          <p>ClickFunnels ($197/mo) · Calendly ($16/mo) · HubSpot CRM ($400/mo) · Mailchimp ($100/mo) · Twilio ($50/mo) · BirdEye Reviews ($300/mo) · CallRail ($45/mo) · ActiveCampaign ($149/mo) · Podium ($289/mo) · WordPress hosting ($30/mo) · Mindbody ($129/mo)</p>
+        </div>
+      </div>
+
+      <ul class="steps-list">
+        <li>
+          <div class="step-num-circle">1</div>
+          <div class="step-body">
+            <h5>Sign up at gohighlevel.com</h5>
+            <p>Choose the <strong>"Agency Pro" plan at $297/month</strong>. This gives you unlimited sub-accounts (one per client), white-labeling, SaaS mode, and every feature you need. Start with the 14-day free trial. No credit card needed immediately.</p>
+            <span class="code-pill">→ gohighlevel.com</span>
+            <span class="code-pill">Agency Pro Plan</span>
+            <span class="code-pill">$297/mo</span>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">2</div>
+          <div class="step-body">
+            <h5>White-label GHL as "Aug8 Agency"</h5>
+            <p>Go to <strong>Agency Settings → White Labeling</strong>. Upload the Aug8 Agency logo, set your brand colors (blue + white), and enter your custom domain (app.aug8agency.com). Clients will log in and see "Aug8 Agency" — not GoHighLevel.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">3</div>
+          <div class="step-body">
+            <h5>Connect Twilio (for SMS + call alerts)</h5>
+            <p>Sign up at <strong>twilio.com</strong> (free account). In GHL → Settings → Phone → Connect Twilio. Buy one US phone number ($1/month). This powers your 5-minute lead alert calls and SMS follow-ups. Cost: approximately <strong>$0.01 per SMS, $0.02 per call minute</strong>.</p>
+            <span class="code-pill">→ twilio.com</span>
+            <span class="code-pill">~$1-5/mo per client</span>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">4</div>
+          <div class="step-body">
+            <h5>Connect Mailgun (for email sending)</h5>
+            <p>Sign up at <strong>mailgun.com</strong> (free for first 1,000 emails/month). In GHL → Settings → Email Services → Connect Mailgun. This powers all automated email sequences, review requests, and appointment reminders.</p>
+            <span class="code-pill">→ mailgun.com</span>
+            <span class="code-pill">Free up to 1k emails</span>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">5</div>
+          <div class="step-body">
+            <h5>Build your Dental Snapshot (Do this once, reuse forever)</h5>
+            <p>A "Snapshot" is a pre-built template inside GHL containing everything: CRM pipeline, automations, website template, review request sequences, and the 5-min lead alert workflow. Build it once for your first client, then <strong>1-click deploy it</strong> to every new dental client in seconds. This is what scales your agency without extra work.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-icon">🎯</div>
+          <div class="tool-name">GoHighLevel</div>
+          <div class="tool-desc">Master platform — CRM, websites, automations, calls, SMS, email, reviews. Everything.</div>
+          <span class="tool-cost paid">$297/month</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">📱</div>
+          <div class="tool-name">Twilio</div>
+          <div class="tool-desc">Powers all phone calls and SMS. Connected inside GHL. Essential for 5-min alerts.</div>
+          <span class="tool-cost paid">~$5/mo per client</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">📧</div>
+          <div class="tool-name">Mailgun</div>
+          <div class="tool-desc">Email delivery engine. Connected inside GHL for all automated email sequences.</div>
+          <span class="tool-cost free">Free up to 1k/mo</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">🎨</div>
+          <div class="tool-name">Canva Pro</div>
+          <div class="tool-desc">Design ad creatives, logos, social posts. Templates for dental practices included.</div>
+          <span class="tool-cost paid">$12.99/month</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">💼</div>
+          <div class="tool-name">Upwork</div>
+          <div class="tool-desc">Hire white-label website developers and media buyers for higher-tier clients.</div>
+          <span class="tool-cost free">Free to post jobs</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">📊</div>
+          <div class="tool-name">Meta Business Suite</div>
+          <div class="tool-desc">Where you manage all Facebook/Instagram ad campaigns for all clients.</div>
+          <span class="tool-cost free">Free (ad spend separate)</span>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top:24px">
+        <div class="tip-label">💡 Pro Tip</div>
+        <p>With <strong>just 5 clients</strong> on your lowest plan ($1,997/mo each), you're generating $9,985/month. Your entire tool stack costs under $500/month. That's over $9,000 profit before ad management costs. GoHighLevel is the engine that makes this possible.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 02: PLAN 1                                     -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-break"><hr/><span>Plan 1</span><hr/></div>
+<div class="section-wrap" id="plan1">
+  <div class="sec-header">
+    <div class="plan-badge badge-gray">🌱 Practice Launch</div>
+    <h2>Plan 1 — Practice Launch</h2>
+    <p>For brand-new dental practices that need their entire digital foundation built from scratch. You are building their online presence, their first ad campaign, and activating the lead alert system.</p>
+    <div class="plan-price-row">
+      <div class="price-chip"><span class="price-chip-label">Agency Fee</span><span class="price-chip-val accent">$1,997/mo</span></div>
+      <div class="price-chip"><span class="price-chip-label">3-Month Total</span><span class="price-chip-val">$5,991</span></div>
+      <div class="price-chip"><span class="price-chip-label">Rec. Ad Spend</span><span class="price-chip-val">$1,000/mo</span></div>
+      <div class="price-chip"><span class="price-chip-label">Your Est. Cost</span><span class="price-chip-val accent">~$600/mo</span></div>
+    </div>
+  </div>
+  <div class="content-card">
+
+    <!-- STEP A: Website -->
+    <div class="cc-section">
+      <div class="step-title">🌐 Deliverable 1 — Build the Dental Website
+        <span class="step-badge sb-blue">Week 1–2</span>
+      </div>
+      <p class="prose">The dentist has no website or an outdated one. Your job is to deliver a professional, mobile-first, appointment-focused dental website within <strong>7–10 business days</strong>. Here is the exact process:</p>
+
+      <ul class="steps-list">
+        <li>
+          <div class="step-num-circle">1</div>
+          <div class="step-body">
+            <h5>Collect assets from the client (Day 1)</h5>
+            <p>Send the client an onboarding form (built in GHL). Ask for: Practice name, address, phone, services offered (general, cosmetic, pediatric, etc.), any existing logo files, photos of the practice/team, insurance accepted, hours of operation, and their Google Business Profile link if they have one.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">2</div>
+          <div class="step-body">
+            <h5>Build the site using GHL Website Builder (No-code)</h5>
+            <p>Inside GoHighLevel → go to <strong>Sites → Websites → Templates</strong>. Search "Dental" in the template library. Pick a clean, professional template. Customize it with the client's info: logo, colors, services, team photos, address, and booking form. GHL's drag-and-drop editor requires zero coding knowledge.</p>
+            <span class="code-pill">GHL → Sites → Websites → New Website</span>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">3</div>
+          <div class="step-body">
+            <h5>Pages to include (minimum for Plan 1)</h5>
+            <p>Build these 6 pages: <strong>Home</strong> (hero + services + booking form + reviews), <strong>About Us</strong> (doctor bio + team + office photos), <strong>Services</strong> (list all treatments with descriptions), <strong>New Patients</strong> (insurance, what to expect, new patient form), <strong>Contact</strong> (map + hours + phone + form), <strong>Book Appointment</strong> (GHL calendar embed for online scheduling).</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">4</div>
+          <div class="step-body">
+            <h5>Connect their domain</h5>
+            <p>The client either already has a domain (e.g., on GoDaddy) or you buy one for them (~$12/year on Namecheap). In GHL → Sites → Domains → Add Domain → follow DNS instructions. Site is live in 24–48 hours after DNS propagation.</p>
+            <span class="code-pill">→ namecheap.com</span>
+            <span class="code-pill">~$12/year for domain</span>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">5</div>
+          <div class="step-body">
+            <h5>Optional: Use Upwork for a premium build</h5>
+            <p>For clients who want something more custom, post a job on <strong>upwork.com</strong>: "WordPress dental website — 6 pages, appointment booking, SEO-ready." Budget: $300–$600. Timeline: 5–7 days. Always tell the freelancer it's for your agency client — never give them the client's contact directly.</p>
+            <span class="code-pill">→ upwork.com</span>
+            <span class="code-pill">Budget: $300–$600</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="info-box green">
+        <div class="info-box-icon">✅</div>
+        <div class="info-box-body">
+          <h5>Website Deliverable Checklist</h5>
+          <ul class="checklist" style="margin-top:0">
+            <li><span class="ck">✓</span> Mobile responsive on all screen sizes</li>
+            <li><span class="ck">✓</span> Online appointment booking form connected to GHL CRM</li>
+            <li><span class="ck">✓</span> Click-to-call phone button on mobile</li>
+            <li><span class="ck">✓</span> Google Maps embed on contact page</li>
+            <li><span class="ck">✓</span> Meta Pixel installed (needed for ads)</li>
+            <li><span class="ck">✓</span> Google Analytics 4 connected</li>
+            <li><span class="ck">✓</span> SSL certificate active (HTTPS)</li>
+            <li><span class="ck">✓</span> Page speed score above 70 on Google PageSpeed</li>
+            <li><span class="ck">✓</span> Basic on-page SEO: title tags, meta descriptions, H1s</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP B: Meta Ads -->
+    <div class="cc-section">
+      <div class="step-title">📣 Deliverable 2 — Launch 1 Meta Ad Campaign
+        <span class="step-badge sb-orange">Week 2–3</span>
+      </div>
+      <p class="prose">For Plan 1, you run <strong>one Facebook/Instagram lead generation campaign</strong> targeting new patients in the practice's local area. The goal: get appointment requests. Here is the setup from start to finish:</p>
+
+      <ul class="steps-list">
+        <li>
+          <div class="step-num-circle">1</div>
+          <div class="step-body">
+            <h5>Get access to their Facebook Business Manager</h5>
+            <p>Ask the client to go to <strong>business.facebook.com</strong>, create a Business Manager account (if they don't have one), then go to Business Settings → People → Add People → enter your email address → assign "Admin" access. This gives you control to run their ads.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">2</div>
+          <div class="step-body">
+            <h5>Set up the Ad Account and Meta Pixel</h5>
+            <p>In their Business Manager → Ad Accounts → Create New Ad Account (named "Dentist Name – Aug8"). Then go to Events Manager → Create Pixel → copy the pixel code → paste into the website's header (GHL has a dedicated field for this in Site Settings). The pixel tracks who visits the site for future retargeting.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">3</div>
+          <div class="step-body">
+            <h5>Create the campaign in Ads Manager</h5>
+            <p>Go to <strong>ads.facebook.com → Ads Manager → Create</strong>. Select <strong>Campaign Objective: Leads</strong>. Name it: "Aug8 – [Practice Name] – New Patient – [Month]". Budget type: Daily Budget. Set to <strong>$33/day</strong> (= $1,000/month).</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">4</div>
+          <div class="step-body">
+            <h5>Target audience setup (Ad Set level)</h5>
+            <p>Location: Enter the practice's city + set radius to <strong>10 miles</strong>. Age: <strong>25–65</strong>. Gender: All. Detailed Targeting: Add interests like "Dental care", "Oral hygiene", "Teeth whitening", "Family health". Also add "Recently moved" behavior (people who just moved are actively looking for a new dentist). Leave Advantage+ Audience ON.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">5</div>
+          <div class="step-body">
+            <h5>Create the ad creative (the actual ad people see)</h5>
+            <p>Use <strong>Canva.com</strong> to design the ad image (1080x1080px). Use a clean before/after smile photo or a professional photo of the dental office. The ad copy formula that works: <br/>
+            Headline: <em>"New Patient Special — [City] Dentist 🦷"</em><br/>
+            Body: <em>"Accepting new patients now! Get a [Offer: $79 cleaning + exam / Free whitening / etc.] when you book before [Date]. Limited spots available."</em><br/>
+            CTA Button: Select "Get Quote" or "Sign Up".</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">6</div>
+          <div class="step-body">
+            <h5>Set up the Instant Lead Form (stays inside Facebook)</h5>
+            <p>In the ad setup, choose <strong>Instant Form</strong> (not website landing page — this converts 2–3x better for Plan 1). Fields to collect: Full Name, Phone Number, Email, Preferred Appointment Date. Add a HIPAA-friendly disclaimer. Publish. This form data flows directly into GHL via the native Meta integration.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">7</div>
+          <div class="step-body">
+            <h5>Connect GHL → Meta for automatic lead sync</h5>
+            <p>In GHL → Settings → Integrations → Facebook → Connect your Facebook account → Select the client's Ad Account and Lead Form. Now every lead that submits the Facebook form <strong>automatically appears in GHL's CRM within seconds</strong>. This also triggers your 5-min alert automation (see Section 07).</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="tip-box">
+        <div class="tip-label">🎯 Best Performing Dental Offers for Meta Ads</div>
+        <p><strong>$79 New Patient Special</strong> (cleaning + exam + X-rays) · <strong>Free Consultation</strong> for cosmetic/implants · <strong>Free Teeth Whitening</strong> with new patient exam · <strong>Same-Day Emergency Appointment</strong> · <strong>Free Invisalign Consultation</strong>. Always use a time-limited offer. "Book before [date]" doubles conversion rates.</p>
+      </div>
+    </div>
+
+    <!-- STEP C: Lead Alert -->
+    <div class="cc-section">
+      <div class="step-title">⚡ Deliverable 3 — Activate 5-Minute Lead Alert
+        <span class="step-badge sb-green">Week 3 · 30 mins setup</span>
+      </div>
+      <p class="prose">This is Aug8's signature feature. The moment a lead submits the Facebook form, an automated call goes to the dental practice's front desk within 5 minutes. Here is how to set this up in GHL:</p>
+
+      <div class="workflow-card">
+        <div class="wf-title">⚡ 5-Minute Lead Alert — GHL Automation Workflow</div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-trigger">⚡</div>
+          <div class="wf-body">
+            <h5>TRIGGER: New Lead Submitted</h5>
+            <p>Trigger type: "Form Submitted" or "Facebook Lead Form Submitted". When any new contact is created from the Meta lead form — this workflow fires immediately.</p>
+            <span class="wf-tag wft-trigger">Trigger</span>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-action">📞</div>
+          <div class="wf-body">
+            <h5>ACTION 1: Call the Practice (Outbound Call)</h5>
+            <p>Action type: "Send Internal Notification → Call". Set "To Number" = dental practice's front desk phone number. Set "Message" = "You have a new patient lead! Name: {{contact.name}}, Phone: {{contact.phone}}, Email: {{contact.email}}. Call them back right now." GHL's Twilio integration dials this call within 60–90 seconds.</p>
+            <span class="wf-tag wft-action">Action: Call Alert</span>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-action">💬</div>
+          <div class="wf-body">
+            <h5>ACTION 2: Send SMS to the Lead Instantly</h5>
+            <p>Action type: "Send SMS". To: {{contact.phone}}. Message: "Hi {{contact.firstName}}! Thanks for your interest in [Practice Name]. One of our team members will call you within the next few minutes to schedule your appointment. — [Practice Name] Team"</p>
+            <span class="wf-tag wft-action">Action: SMS to Lead</span>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-action">📧</div>
+          <div class="wf-body">
+            <h5>ACTION 3: Send Email Alert to Practice Manager</h5>
+            <p>Action type: "Send Email". To: practice manager email. Subject: "🚨 New Patient Lead — [Contact Name]". Body: All lead details, phone, email, time received, and the ad they came from. This creates a paper trail.</p>
+            <span class="wf-tag wft-action">Action: Email Alert</span>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-wait">⏱️</div>
+          <div class="wf-body">
+            <h5>WAIT: 2 Hours</h5>
+            <p>If the lead has not been contacted yet (opportunity status still = "New"), wait 2 hours then trigger follow-up sequence.</p>
+            <span class="wf-tag wft-wait">Wait: 2 Hours</span>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-action">💬</div>
+          <div class="wf-body">
+            <h5>ACTION 4: Second SMS Follow-Up</h5>
+            <p>SMS: "Hi {{contact.firstName}}, we haven't been able to reach you yet! Please call us at [Practice Phone] or reply to this text to schedule your appointment. We have openings this week! 😊"</p>
+            <span class="wf-tag wft-action">Action: Follow-up SMS</span>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-end">✅</div>
+          <div class="wf-body">
+            <h5>END: Move to "Contacted" Pipeline Stage</h5>
+            <p>Action type: "Move Opportunity to Stage → Contacted". The CRM pipeline now shows the lead has been followed up with. This keeps the practice's CRM clean and organized.</p>
+            <span class="wf-tag wft-action">Action: Update CRM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 03: PLAN 2                                     -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-break"><hr/><span>Plan 2</span><hr/></div>
+<div class="section-wrap" id="plan2">
+  <div class="sec-header">
+    <div class="plan-badge badge-green">⚙️ Practice Essentials</div>
+    <h2>Plan 2 — Practice Essentials</h2>
+    <p>Everything in Plan 1, PLUS reputation management, 2 Meta campaigns, call tracking, SMS automation, and ongoing website maintenance. This is the plan for established practices ready for consistent monthly growth.</p>
+    <div class="plan-price-row">
+      <div class="price-chip"><span class="price-chip-label">Agency Fee</span><span class="price-chip-val accent">$2,697/mo</span></div>
+      <div class="price-chip"><span class="price-chip-label">3-Month Total</span><span class="price-chip-val">$8,091</span></div>
+      <div class="price-chip"><span class="price-chip-label">Rec. Ad Spend</span><span class="price-chip-val">$1,500/mo</span></div>
+      <div class="price-chip"><span class="price-chip-label">Your Est. Cost</span><span class="price-chip-val accent">~$800/mo</span></div>
+    </div>
+  </div>
+  <div class="content-card">
+
+    <div class="cc-section">
+      <div class="step-title">✅ Everything in Plan 1, Plus These Additions:
+        <span class="step-badge sb-gray">Build on Plan 1 Foundation</span>
+      </div>
+      <p class="prose">For Plan 2 clients, you deliver all Plan 1 services (website + 1 ad campaign + 5-min alert) AND add the following three services. Use the same GHL sub-account — everything is already connected.</p>
+    </div>
+
+    <!-- Reputation -->
+    <div class="cc-section">
+      <div class="step-title">⭐ New: Reputation Management System
+        <span class="step-badge sb-orange">Setup Once, Runs Automatically</span>
+      </div>
+      <p class="prose">92% of patients read reviews before choosing a dentist. Your job is to build an automated system that consistently generates 5-star Google reviews from happy patients — without anyone on the dental team having to manually ask.</p>
+
+      <ul class="steps-list">
+        <li>
+          <div class="step-num-circle green">1</div>
+          <div class="step-body">
+            <h5>Connect Google Business Profile to GHL</h5>
+            <p>In GHL → Settings → Integrations → Google My Business → Connect the client's Google account. GHL will now pull in all existing reviews and allow you to respond to them from the GHL dashboard. If the client doesn't have a Google Business Profile, create one at <strong>business.google.com</strong> (free, takes 1 week to verify by postcard).</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle green">2</div>
+          <div class="step-body">
+            <h5>Build the Review Request Automation in GHL</h5>
+            <p>Go to GHL → Automation → Create Workflow. Set trigger: "Appointment Status Changed to Completed" (this connects to their GHL calendar). Then: Wait 2 hours after appointment → Send SMS: <em>"Hi {{contact.firstName}}, thank you for visiting [Practice]! We'd love to hear about your experience. Could you leave us a quick review? It takes just 1 minute: [Google Review Link]"</em>. Send to every patient after every visit. Target: 15–30 new reviews per month.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle green">3</div>
+          <div class="step-body">
+            <h5>Set up negative review alerts</h5>
+            <p>In GHL → Reputation → Settings → Enable "Alert on New Review Under 3 Stars". You (or the client) receive an instant email whenever a bad review comes in. <strong>Respond within 24 hours</strong> with a professional apology and offer to make it right. This shows Google (and future patients) that the practice is responsive and professional.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle green">4</div>
+          <div class="step-body">
+            <h5>Monthly reputation report</h5>
+            <p>GHL automatically generates a Reputation Report showing total reviews, average star rating, new reviews this month, and review sources. Export as PDF. Email to client as part of your monthly report. Takes 2 minutes.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="info-box blue">
+        <div class="info-box-icon">📊</div>
+        <div class="info-box-body">
+          <h5>Review Impact Statistics (Show These to Clients)</h5>
+          <p>92% of patients read reviews before booking · Practices with 50+ Google reviews get 3x more clicks · Moving from 3.5 to 4.5 stars increases patient inquiries by 67% · Responding to reviews improves search ranking · A single new 5-star review brings an average of $1,200 in lifetime patient revenue.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call Tracking -->
+    <div class="cc-section">
+      <div class="step-title">📞 New: Call Tracking Setup
+        <span class="step-badge sb-blue">30 Minutes Setup</span>
+      </div>
+      <p class="prose">Call tracking lets you prove to the client which ads and pages are generating phone calls — without this, they have no idea if your work is driving results. In GHL, this is built in:</p>
+
+      <ul class="steps-list">
+        <li>
+          <div class="step-num-circle">1</div>
+          <div class="step-body">
+            <h5>Create a tracking phone number in GHL</h5>
+            <p>GHL → Phone Numbers → Buy Number → Choose a local area code for the client's city. Cost: $1–2/month. Place this number on the website, Facebook ad, and Google Business Profile instead of their real number.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">2</div>
+          <div class="step-body">
+            <h5>Forward all calls to the real practice number</h5>
+            <p>In GHL → Phone Settings → Call Forwarding → Enter the dental practice's real phone number. Every call goes through — the client doesn't notice any difference. But GHL records the call, tracks which source it came from, and stores it in the CRM.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">3</div>
+          <div class="step-body">
+            <h5>Include call data in monthly reports</h5>
+            <p>GHL tracks: total calls received, call duration, missed calls, and the source (Facebook ad, Google, website). This data is GOLD for showing the client ROI. "You received 47 calls from your ads this month" is a very powerful retention tool.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2nd Campaign -->
+    <div class="cc-section">
+      <div class="step-title">📣 New: 2nd Meta Ad Campaign — Retargeting
+        <span class="step-badge sb-purple">Runs Alongside Campaign 1</span>
+      </div>
+      <p class="prose">The second campaign in Plan 2 is a <strong>website retargeting campaign</strong>. It targets people who visited the website but didn't book. This audience is highly warm — they already know the practice exists and are considering it.</p>
+
+      <ul class="steps-list">
+        <li>
+          <div class="step-num-circle purple">1</div>
+          <div class="step-body">
+            <h5>Create a Custom Audience from Website Visitors</h5>
+            <p>In Meta Ads Manager → Audiences → Create Audience → Custom Audience → Website → "All website visitors in the last 30 days". This requires the Meta Pixel to have been installed (done in Plan 1 website setup). Minimum 100 visitors needed before this audience activates.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle purple">2</div>
+          <div class="step-body">
+            <h5>Create the retargeting campaign</h5>
+            <p>New campaign → Objective: Leads. Ad Set target: the Custom Audience from step 1. Budget: $15/day ($450/month — the remainder of $1,500 budget goes to Campaign 1). Ad copy: <em>"Still looking for a dentist in [City]? We're accepting new patients this week! Book your $79 New Patient Special today →"</em>. Add social proof: "★★★★★ Rated by 200+ patients."</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="info-box orange">
+        <div class="info-box-icon">🔥</div>
+        <div class="info-box-body">
+          <h5>Why Retargeting Converts 3x Better</h5>
+          <p>Retargeted ads show to people who already visited the website — they already know the practice. The average retargeting CTR is 10x higher than cold audience ads, and the cost per lead drops by up to 70%. This is why Plan 2 clients often see dramatically better lead quality than Plan 1.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMS Automation -->
+    <div class="cc-section">
+      <div class="step-title">💬 New: SMS Lead Follow-Up Automation
+        <span class="step-badge sb-teal">Build Once in GHL</span>
+      </div>
+      <p class="prose">Beyond the 5-min alert, Plan 2 includes a full <strong>7-day SMS nurture sequence</strong> for leads who haven't booked yet. Many leads need 2–4 follow-up touches before they commit. This sequence runs fully on autopilot in GHL:</p>
+
+      <div class="workflow-card">
+        <div class="wf-title">📲 7-Day Lead Nurture SMS Sequence (GHL Workflow)</div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-trigger">⚡</div>
+          <div class="wf-body">
+            <h5>TRIGGER: Lead Submitted (not yet booked)</h5>
+            <p>Fires when a new lead comes in and no appointment is scheduled yet.</p>
+            <span class="wf-tag wft-trigger">Trigger: New Lead</span>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-action">💬</div>
+          <div class="wf-body">
+            <h5>Day 0 — Instant SMS (within 5 min)</h5>
+            <p>"Hi {{firstName}}! We got your request at [Practice Name]. Ready to schedule? Call us at [number] or reply BOOK and we'll set you up! 😊"</p>
+            <span class="wf-tag wft-action">Day 0</span>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-action">💬</div>
+          <div class="wf-body">
+            <h5>Day 1 — Value SMS</h5>
+            <p>"Did you know? Your first visit at [Practice] includes a full exam + X-rays. We accept most insurance. Book online: [booking link]"</p>
+            <span class="wf-tag wft-action">Day 1</span>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-action">💬</div>
+          <div class="wf-body">
+            <h5>Day 3 — Social Proof SMS</h5>
+            <p>"[Practice] has 180+ 5-star reviews on Google! ⭐⭐⭐⭐⭐ Patients love our gentle, stress-free approach. Claim your new patient special: [link]"</p>
+            <span class="wf-tag wft-action">Day 3</span>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-action">💬</div>
+          <div class="wf-body">
+            <h5>Day 7 — Urgency SMS</h5>
+            <p>"Hi {{firstName}}, this is our last reminder about your $79 new patient special at [Practice]. This offer expires [date]. Reply STOP to opt out."</p>
+            <span class="wf-tag wft-action">Day 7</span>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon wfi-end">✅</div>
+          <div class="wf-body">
+            <h5>END — Archive lead if no response</h5>
+            <p>Move to "Cold Lead" pipeline stage. Keep in database for future reactivation campaigns (holiday specials, etc.).</p>
+            <span class="wf-tag wft-action">Archive</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 04: PLAN 3                                     -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-break"><hr/><span>Plan 3</span><hr/></div>
+<div class="section-wrap" id="plan3">
+  <div class="sec-header">
+    <div class="plan-badge badge-blue">🚀 Practice Builder — Most Popular</div>
+    <h2>Plan 3 — Practice Builder</h2>
+    <p>Everything in Plans 1 & 2, PLUS 4 campaigns, video ad creatives, competitor conquest ads, advanced SEO, bi-weekly strategy calls, and priority lead alerts. This is your premium growth engine plan.</p>
+    <div class="plan-price-row">
+      <div class="price-chip"><span class="price-chip-label">Agency Fee</span><span class="price-chip-val accent">$3,497/mo</span></div>
+      <div class="price-chip"><span class="price-chip-label">3-Month Total</span><span class="price-chip-val">$10,491</span></div>
+      <div class="price-chip"><span class="price-chip-label">Rec. Ad Spend</span><span class="price-chip-val">$2,500/mo</span></div>
+      <div class="price-chip"><span class="price-chip-label">Your Est. Cost</span><span class="price-chip-val accent">~$1,400/mo</span></div>
+    </div>
+  </div>
+  <div class="content-card">
+
+    <div class="cc-section">
+      <div class="step-title">📣 4 Meta Campaigns — Full Campaign Architecture
+        <span class="step-badge sb-blue">$2,500 Ad Budget Split</span>
+      </div>
+      <p class="prose">At $2,500/month in ad spend, you run <strong>4 campaigns simultaneously</strong> — each targeting a different audience and funnel stage. Here is exactly how the $2,500 budget is split:</p>
+
+      <div class="flow" style="flex-wrap:wrap;gap:10px">
+        <div class="flow-step accent"><span class="fs-icon">🆕</span>Campaign 1<br/>Cold New Patients<br/><small>$1,000/mo</small></div>
+        <div class="flow-arrow">+</div>
+        <div class="flow-step" style="background:linear-gradient(135deg,#7c3aed,#8b5cf6)"><span class="fs-icon">🎯</span>Campaign 2<br/>Retargeting<br/><small>$500/mo</small></div>
+        <div class="flow-arrow">+</div>
+        <div class="flow-step" style="background:linear-gradient(135deg,#059669,#10b981)"><span class="fs-icon">🔍</span>Campaign 3<br/>Lookalike Audience<br/><small>$700/mo</small></div>
+        <div class="flow-arrow">+</div>
+        <div class="flow-step" style="background:linear-gradient(135deg,#dc2626,#ef4444)"><span class="fs-icon">⚔️</span>Campaign 4<br/>Competitor Conquest<br/><small>$300/mo</small></div>
+      </div>
+
+      <ul class="steps-list" style="margin-top:20px">
+        <li>
+          <div class="step-num-circle">1</div>
+          <div class="step-body">
+            <h5>Campaign 3 — Lookalike Audience (New Addition)</h5>
+            <p>In Meta Ads Manager → Audiences → Create Lookalike Audience. Source: Upload current patient email list from the dental practice (CSV file). Target country: USA. Audience size: 1% (closest match). Meta finds people in the area who look exactly like current patients. These are the highest-quality cold leads possible. Budget: $700/month.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle">2</div>
+          <div class="step-body">
+            <h5>Campaign 4 — Competitor Conquest (Exclusive to Plan 3+)</h5>
+            <p>Target people who follow or have interacted with <strong>competitor dental practices</strong> in the area. In Meta's Detailed Targeting → search the names of 3–5 competing dental practices in the client's city. Some practices have pages with followings you can target. Ad copy: <em>"Looking for a better dental experience in [City]? [Practice Name] is now accepting new patients — with 5-star care and same-week appointments."</em> Budget: $300/month.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Video Ads -->
+    <div class="cc-section">
+      <div class="step-title">🎬 New: Video Ad Creatives — How to Create Them
+        <span class="step-badge sb-purple">Canva + CapCut = Free</span>
+      </div>
+      <p class="prose">Video ads get <strong>3x more engagement</strong> than image ads on Facebook/Instagram. For Plan 3, you include one video ad creative per month. You do NOT need to be a videographer. Here are 3 ways to do this:</p>
+
+      <div class="platform-grid">
+        <div class="platform-card">
+          <div class="platform-head ph-purple">🎨 Option 1: Canva Video Ads (Easiest)</div>
+          <div class="platform-body">
+            <ul>
+              <li>Go to canva.com → search "Dental Facebook Ad Video"</li>
+              <li>Pick a template, swap logo and colors</li>
+              <li>Add before/after photos, text animations</li>
+              <li>Export as MP4 (square 1080x1080 for feed)</li>
+              <li>Takes: 30–45 minutes per video</li>
+              <li>Cost: Free with Canva Pro ($12.99/mo)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-head ph-gray">📱 Option 2: CapCut AI Video (Easiest for Reels)</div>
+          <div class="platform-body">
+            <ul>
+              <li>Download CapCut app (free on phone/desktop)</li>
+              <li>Use "AI Script to Video" feature — paste your ad copy</li>
+              <li>CapCut auto-generates a video with stock clips</li>
+              <li>Add the dental practice name and offer as text</li>
+              <li>Export as vertical (9:16) for Instagram Reels/Stories</li>
+              <li>Cost: Free</li>
+            </ul>
+          </div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-head ph-orange">🎥 Option 3: Hire on Fiverr (Best Quality)</div>
+          <div class="platform-body">
+            <ul>
+              <li>Go to fiverr.com → search "dental Facebook video ad"</li>
+              <li>Filter: Budget $50–$150, Top Rated Sellers</li>
+              <li>Send them: logo, offer, brand colors, 3 stock images</li>
+              <li>They deliver a 15–30 second professional video ad</li>
+              <li>Turnaround: 2–3 business days</li>
+              <li>Cost: $50–$150 per video</li>
+            </ul>
+          </div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-head" style="background:#1877f2;color:#fff">📹 What to Show in the Video</div>
+          <div class="platform-body">
+            <ul>
+              <li>Opening 3 seconds: Bold offer text ("$79 New Patient Special")</li>
+              <li>Seconds 4–10: Before/after smiles or office walkthrough</li>
+              <li>Seconds 11–20: Patient testimonial quote as text overlay</li>
+              <li>Seconds 21–30: Practice name, phone, "Book Now" CTA</li>
+              <li>Always add captions (85% of people watch with no sound)</li>
+              <li>Keep under 30 seconds for maximum completion rate</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advanced SEO -->
+    <div class="cc-section">
+      <div class="step-title">🔍 New: Advanced Local SEO Campaign
+        <span class="step-badge sb-green">Ongoing Monthly Work</span>
+      </div>
+      <p class="prose">SEO brings free, organic patient traffic that compounds over time. For Plan 3, you include a monthly local SEO effort. You are NOT doing full technical SEO — you are doing the 3 things that move the needle most for local dental practices:</p>
+
+      <ul class="steps-list">
+        <li>
+          <div class="step-num-circle green">1</div>
+          <div class="step-body">
+            <h5>Google Business Profile (GBP) Optimization — Monthly</h5>
+            <p>Post 2–4 times per month on the GBP profile (like social media, but for Google). Post types: new patient specials, treatment spotlights, staff photos, before/after photos. Use <strong>Canva</strong> to design the images. Write posts using keywords like "dentist in [City]", "teeth whitening [City]", etc. GHL's Social Planner can schedule GBP posts automatically.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle green">2</div>
+          <div class="step-body">
+            <h5>Citation Building (One-time + Monthly Additions)</h5>
+            <p>A "citation" is any online listing of the dental practice (Yelp, Healthgrades, ZocDoc, WebMD, etc.) with consistent NAP (Name, Address, Phone). Use <strong>BrightLocal.com</strong> ($29/month) to scan for existing citations, find missing ones, and build new ones. Goal: 50+ consistent citations. This directly boosts Google Maps ranking for "dentist near me" searches.</p>
+            <span class="code-pill">→ brightlocal.com</span>
+            <span class="code-pill">$29/mo — bill to client or absorb</span>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle green">3</div>
+          <div class="step-body">
+            <h5>1 SEO Blog Post Per Month</h5>
+            <p>Write a 600–800 word blog post targeting a local keyword. Examples: <em>"Best Dentist in [City] for Teeth Whitening"</em>, <em>"What to Expect at Your First Dental Appointment in [City]"</em>, <em>"Affordable Invisalign in [City] — What You Need to Know"</em>. Use <strong>Claude.ai or ChatGPT</strong> to draft the post in 5 minutes. Publish on the website through GHL or WordPress.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Strategy Calls -->
+    <div class="cc-section">
+      <div class="step-title">📅 New: Bi-Weekly Strategy Calls
+        <span class="step-badge sb-gray">2 × 30 min per Month</span>
+      </div>
+      <p class="prose">Plan 3 clients get 2 strategy calls per month. These calls are essential for client retention and upselling. Use <strong>Google Meet or Zoom</strong> (both free). Here is the exact agenda for every call:</p>
+
+      <div class="info-box blue">
+        <div class="info-box-icon">📋</div>
+        <div class="info-box-body">
+          <h5>Strategy Call Agenda (30 minutes)</h5>
+          <p>
+            <strong>0–5 min:</strong> Review last 2 weeks' results (leads received, cost per lead, call tracking data, new reviews)<br/>
+            <strong>5–15 min:</strong> What's working and what needs adjustment (ad creative, targeting, offer)<br/>
+            <strong>15–20 min:</strong> Action items for next 2 weeks (new ad creative, seasonal offer, GBP posts)<br/>
+            <strong>20–25 min:</strong> Ask about the practice — any upcoming events, specials, new services? (Content ideas)<br/>
+            <strong>25–30 min:</strong> Address any concerns or questions from the client
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 05: PLAN 4                                     -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-break"><hr/><span>Plan 4</span><hr/></div>
+<div class="section-wrap" id="plan4">
+  <div class="sec-header">
+    <div class="plan-badge badge-orange">👑 Market Dominator</div>
+    <h2>Plan 4 — Market Dominator</h2>
+    <p>The full-service, maximum exposure package for practices ready to dominate their entire local market. Unlimited campaigns, Google Ads (PPC), multi-location support, a dedicated account manager, and full CRM automation.</p>
+    <div class="plan-price-row">
+      <div class="price-chip"><span class="price-chip-label">Agency Fee</span><span class="price-chip-val accent">$4,997/mo</span></div>
+      <div class="price-chip"><span class="price-chip-label">3-Month Total</span><span class="price-chip-val">$14,991</span></div>
+      <div class="price-chip"><span class="price-chip-label">Rec. Ad Spend</span><span class="price-chip-val">$4,000/mo</span></div>
+      <div class="price-chip"><span class="price-chip-label">Your Est. Cost</span><span class="price-chip-val accent">~$2,200/mo</span></div>
+    </div>
+  </div>
+  <div class="content-card">
+
+    <!-- Google Ads -->
+    <div class="cc-section">
+      <div class="step-title">🔎 New: Google Ads (PPC) Management
+        <span class="step-badge sb-orange">Highest Intent Traffic</span>
+      </div>
+      <p class="prose">Google Ads targets people who are <strong>actively searching right now</strong> for "dentist near me" or "emergency dentist [city]." These are the hottest possible leads — they already have intent. At Plan 4 budget, you allocate $1,000–$1,500/month of the $4,000 ad spend to Google Ads.</p>
+
+      <ul class="steps-list">
+        <li>
+          <div class="step-num-circle orange">1</div>
+          <div class="step-body">
+            <h5>Set up Google Ads account</h5>
+            <p>Go to <strong>ads.google.com</strong>. Create an account for the client (use their business email). Enable Smart Campaigns or manually create Search campaigns. Link to their Google Analytics 4 account and Google Business Profile for complete tracking.</p>
+            <span class="code-pill">→ ads.google.com</span>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle orange">2</div>
+          <div class="step-body">
+            <h5>Best dental keywords to target</h5>
+            <p>Use Google's Keyword Planner (free in Google Ads) to find local dental keywords. High-priority keywords:</p>
+            <span class="code-pill">"dentist near me"</span>
+            <span class="code-pill">"emergency dentist [city]"</span>
+            <span class="code-pill">"teeth whitening [city]"</span>
+            <span class="code-pill">"family dentist [city]"</span>
+            <span class="code-pill">"dental implants [city]"</span>
+            <span class="code-pill">"Invisalign [city]"</span>
+            <p style="margin-top:8px">Always use <strong>phrase match</strong> or <strong>exact match</strong> — never broad match (wastes budget on irrelevant searches). Add negative keywords: "dental school", "free dental clinic", "dental assistant jobs".</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle orange">3</div>
+          <div class="step-body">
+            <h5>Outsource Google Ads management on Upwork (Recommended)</h5>
+            <p>Google Ads has a steeper learning curve than Meta. For Plan 4 clients, post on <strong>upwork.com</strong>: "Google Ads specialist for dental practice — local PPC". Budget: $400–$700/month. This keeps your margin healthy while delivering premium service. Always review their work weekly and present results to client yourself.</p>
+            <span class="code-pill">Upwork: $400–700/mo outsource cost</span>
+            <span class="code-pill">You charge $1,000+ value</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Multi-Location -->
+    <div class="cc-section">
+      <div class="step-title">🏢 New: Multi-Location Support
+        <span class="step-badge sb-purple">Scale Across Locations</span>
+      </div>
+      <p class="prose">Some Plan 4 clients have 2–3 dental locations. In GHL, you can manage all locations from a single agency account. Each location gets its own sub-account with its own campaigns, lead alerts, CRM, and phone number — but you manage everything from one dashboard.</p>
+
+      <ul class="checklist">
+        <li><span class="ck purple">✓</span> Create separate GHL sub-account per location</li>
+        <li><span class="ck purple">✓</span> Unique Twilio phone number per location for call tracking</li>
+        <li><span class="ck purple">✓</span> Separate Meta Ad accounts per location (required by Meta)</li>
+        <li><span class="ck purple">✓</span> Geo-targeted campaigns per location (different zip radius per office)</li>
+        <li><span class="ck purple">✓</span> Unified monthly report showing all locations combined + individual</li>
+        <li><span class="ck purple">✓</span> Separate Google Business Profile per location — all connected to GHL</li>
+      </ul>
+    </div>
+
+    <!-- Full CRM Automation -->
+    <div class="cc-section">
+      <div class="step-title">🤖 New: Full CRM & Funnel Automation
+        <span class="step-badge sb-teal">The "Done-For-You" System</span>
+      </div>
+      <p class="prose">Plan 4 includes a complete <strong>patient lifecycle automation</strong> — from the moment a lead submits an ad to their 1-year follow-up appointment reminder. This runs entirely on autopilot in GHL. Here are all the automations you build once and they run forever:</p>
+
+      <div class="platform-grid">
+        <div class="platform-card">
+          <div class="platform-head ph-blue">⚡ New Lead Automation</div>
+          <div class="platform-body">
+            <ul>
+              <li>5-min phone alert to front desk</li>
+              <li>Instant SMS to lead</li>
+              <li>Email confirmation to lead</li>
+              <li>7-day nurture SMS sequence</li>
+              <li>Lead assigned to CRM pipeline stage</li>
+            </ul>
+          </div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-head ph-green">📅 Appointment Automation</div>
+          <div class="platform-body">
+            <ul>
+              <li>Appointment confirmation SMS immediately</li>
+              <li>Reminder SMS 48 hours before</li>
+              <li>Reminder SMS 2 hours before</li>
+              <li>"We're ready for you!" SMS day-of</li>
+              <li>Missed appointment re-booking SMS</li>
+            </ul>
+          </div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-head ph-orange">⭐ Post-Visit Automation</div>
+          <div class="platform-body">
+            <ul>
+              <li>Thank you SMS 2 hours after visit</li>
+              <li>Google review request SMS (2 hours after)</li>
+              <li>Email review request (next morning)</li>
+              <li>Before/after photo consent form (if cosmetic)</li>
+              <li>Referral request: "Know someone who needs a dentist?"</li>
+            </ul>
+          </div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-head ph-purple">🔄 Patient Reactivation</div>
+          <div class="platform-body">
+            <ul>
+              <li>6-month recall SMS: "Time for your check-up!"</li>
+              <li>12-month "We miss you!" reactivation campaign</li>
+              <li>Insurance expiry reminder (December)</li>
+              <li>Holiday special offer SMS blast</li>
+              <li>Birthday SMS with special offer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top:20px">
+        <div class="tip-label">🤖 This is the "Set It and Forget It" System</div>
+        <p>Once built in GHL (takes about <strong>6–8 hours the first time</strong>), this entire automation system runs forever without any manual work. For Plan 4 clients, this is the #1 reason they never want to leave — they would lose their entire patient communication system if they cancel. This creates <strong>maximum client retention</strong> for you.</p>
+      </div>
+    </div>
+
+    <!-- Dedicated Account Manager -->
+    <div class="cc-section">
+      <div class="step-title">👤 New: Dedicated Account Manager
+        <span class="step-badge sb-blue">You or a Hire</span>
+      </div>
+      <p class="prose">Plan 4 clients pay your highest rate and expect premium service. "Dedicated account manager" means they have a single point of contact who knows their practice inside-out. At first, <strong>you are the account manager</strong>. As you scale past 10 clients, you can hire a Virtual Assistant to handle day-to-day account management.</p>
+
+      <div class="info-box blue">
+        <div class="info-box-icon">💼</div>
+        <div class="info-box-body">
+          <h5>Hiring a Virtual Account Manager (When You're Ready to Scale)</h5>
+          <p>Platform: <strong>OnlineJobs.ph</strong> (best for Filipino VAs) or Upwork. Role: "Marketing Agency Client Success VA — GHL experience preferred." Pay: $5–$12/hour. Tasks: Monitor campaigns daily, respond to client WhatsApp messages, pull weekly reports, post GBP content, and flag issues to you for review. With a VA handling daily tasks, you can manage 15–20 clients yourself.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 06: META ADS DEEP DIVE                        -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-break"><hr/><span>Meta Ads Deep Dive</span><hr/></div>
+<div class="section-wrap" id="adspend">
+  <div class="sec-header">
+    <div class="plan-badge badge-purple">Section 06 — Meta Ads</div>
+    <h2>📣 Meta Ads — Full Campaign Guide</h2>
+    <p>Everything you need to know about running Facebook and Instagram ads for dental practices — from complying with Meta's healthcare policies to the best ad creative formats that convert cold audiences into booked patients.</p>
+  </div>
+  <div class="content-card">
+
+    <div class="cc-section">
+      <div class="step-title">⚠️ Meta Healthcare Advertising Policies — Read First
+        <span class="step-badge sb-red">Important — Avoid Account Bans</span>
+      </div>
+      <p class="prose">Meta has specific rules for healthcare advertising. Violating these will get the ad account suspended. Here is what you must never do:</p>
+
+      <div class="info-box red">
+        <div class="info-box-icon">🚫</div>
+        <div class="info-box-body">
+          <h5>What You CANNOT Do in Dental Meta Ads</h5>
+          <p>
+            ✗ Never use "before/after" photos that imply guaranteed results (say "possible results" instead)<br/>
+            ✗ Never claim "best dentist" or "#1 dentist" without verifiable proof<br/>
+            ✗ Never target people based on health conditions (e.g., "people with dental anxiety")<br/>
+            ✗ Never collect sensitive health data in lead forms without proper disclaimers<br/>
+            ✗ Never use real patient photos without explicit written consent (HIPAA)<br/>
+            ✗ Never make guarantees ("your pain will be gone in 1 visit")
+          </p>
+        </div>
+      </div>
+
+      <div class="info-box green">
+        <div class="info-box-icon">✅</div>
+        <div class="info-box-body">
+          <h5>Safe Ad Language That Converts</h5>
+          <p>
+            ✓ "Accepting new patients in [City]!"<br/>
+            ✓ "New patient special — $79 cleaning + exam + X-rays"<br/>
+            ✓ "5-star rated dental care in [City]"<br/>
+            ✓ "Gentle, stress-free dental care for the whole family"<br/>
+            ✓ "Same-week appointments available"<br/>
+            ✓ "Most insurance accepted — book today"
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cc-section">
+      <div class="step-title">📺 Learn Meta Ads — Free YouTube Resources
+        <span class="step-badge sb-purple">Watch These First</span>
+      </div>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-thumb">📺</div>
+          <div class="video-info">
+            <h5>Ben Heath — Meta Ads for Beginners</h5>
+            <p>Search: "Ben Heath dental Facebook ads" · Best teacher on YouTube for Meta ads</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb">📺</div>
+          <div class="video-info">
+            <h5>Jordan Platten — SMMA Agency</h5>
+            <p>Search: "Jordan Platten dental niche Facebook ads" · Agency operations + ads</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb">📺</div>
+          <div class="video-info">
+            <h5>Charlie Morgan — Lead Gen Ads</h5>
+            <p>Search: "Charlie Morgan lead generation dental" · Lead form optimization</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb">📺</div>
+          <div class="video-info">
+            <h5>GoHighLevel Official Channel</h5>
+            <p>YouTube: "GoHighLevel Tutorial 2025" · Learn GHL workflows, CRM, automations</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb">📺</div>
+          <div class="video-info">
+            <h5>Frankie Fihn — Dental Marketing</h5>
+            <p>Search: "Frankie Fihn dental marketing" · Dental-specific marketing strategies</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb">📺</div>
+          <div class="video-info">
+            <h5>On The Map Marketing — Dentist Ads</h5>
+            <p>Search: "On The Map Facebook ads dentists" · Step-by-step dental campaign setup</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cc-section">
+      <div class="step-title">💰 Ad Budget Split by Plan
+        <span class="step-badge sb-blue">Reference Guide</span>
+      </div>
+      <table class="cost-table">
+        <thead>
+          <tr><th>Plan</th><th>Total Ad Budget/Mo</th><th>Campaign 1 (Cold)</th><th>Campaign 2 (Retarget)</th><th>Campaign 3 (Lookalike)</th><th>Campaign 4 (Conquest)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🌱 Plan 1 — Launch</td><td class="blue-val">$1,000</td><td>$1,000</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>⚙️ Plan 2 — Essentials</td><td class="blue-val">$1,500</td><td>$1,050</td><td>$450</td><td>—</td><td>—</td></tr>
+          <tr><td>🚀 Plan 3 — Builder</td><td class="blue-val">$2,500</td><td>$1,000</td><td>$500</td><td>$700</td><td>$300</td></tr>
+          <tr><td>👑 Plan 4 — Dominator</td><td class="blue-val">$4,000</td><td>$1,500</td><td>$800</td><td>$1,000</td><td>$700</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 07: REPUTATION                                 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-break"><hr/><span>Reputation System</span><hr/></div>
+<div class="section-wrap" id="reputation">
+  <div class="sec-header">
+    <div class="plan-badge badge-teal">Section 08 — Reputation</div>
+    <h2>⭐ Reputation Management — Full System</h2>
+    <p>The complete end-to-end guide to building a 5-star reputation system that runs on autopilot inside GoHighLevel.</p>
+  </div>
+  <div class="content-card">
+    <div class="cc-section">
+      <div class="step-title">⭐ Review Generation — Step by Step</div>
+      <ul class="steps-list">
+        <li>
+          <div class="step-num-circle green">1</div>
+          <div class="step-body">
+            <h5>Get the Google Review Link</h5>
+            <p>Go to the practice's Google Business Profile → click "Get more reviews" → copy the direct review link. This is what you include in all review request messages. It opens Google Reviews directly — no searching needed.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle green">2</div>
+          <div class="step-body">
+            <h5>Build automated review request in GHL</h5>
+            <p>Automation → New Workflow → Trigger: "Appointment Completed" → Wait 2 hours → Send SMS with review link → Wait 1 day → If no review (condition) → Send email with review link → End. This sequence delivers 15–30 new 5-star reviews per month for an active practice with 20+ appointments per week.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num-circle green">3</div>
+          <div class="step-body">
+            <h5>Yelp & Healthgrades</h5>
+            <p><strong>Important:</strong> Yelp prohibits actively asking patients for reviews (their policy). Do NOT send automated Yelp review requests. Instead, list the practice on Yelp, keep the profile complete, and let reviews come naturally. For Healthgrades, you can include it in the post-visit email as an option ("Leave a review on Google, Facebook, or Healthgrades").</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 09: CLIENT ONBOARDING                         -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-break"><hr/><span>Client Onboarding</span><hr/></div>
+<div class="section-wrap" id="onboarding">
+  <div class="sec-header">
+    <div class="plan-badge badge-purple">Section 09 — Onboarding</div>
+    <h2>📋 Client Onboarding — Week 1 Checklist</h2>
+    <p>The exact checklist to follow every time you sign a new dental client. Complete all items in Week 1 to ensure a fast, professional launch.</p>
+  </div>
+  <div class="content-card">
+    <div class="cc-section">
+      <div class="step-title">✅ Master Client Onboarding Checklist</div>
+      <div class="platform-grid">
+        <div class="platform-card">
+          <div class="platform-head ph-blue">📋 Day 1 — Information Gathering</div>
+          <div class="platform-body">
+            <ul>
+              <li>Send GHL onboarding form to client</li>
+              <li>Collect: logo, photos, services, hours, insurance</li>
+              <li>Get Facebook Business Manager admin access</li>
+              <li>Get Google Business Profile access</li>
+              <li>Get existing domain login (if they have one)</li>
+              <li>Confirm front desk phone number for lead alerts</li>
+              <li>Sign contract + collect 1st month payment</li>
+            </ul>
+          </div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-head ph-green">🛠️ Day 2–3 — GHL Setup</div>
+          <div class="platform-body">
+            <ul>
+              <li>Create new GHL sub-account for client</li>
+              <li>Deploy Dental Snapshot to their account</li>
+              <li>Configure Twilio tracking number</li>
+              <li>Connect Google Business Profile</li>
+              <li>Connect Facebook Business Manager</li>
+              <li>Set up lead alert automation with their phone #</li>
+              <li>Set up review request automation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-head ph-orange">🌐 Day 3–7 — Website Build</div>
+          <div class="platform-body">
+            <ul>
+              <li>Build website in GHL or brief Upwork developer</li>
+              <li>Install Meta Pixel on website</li>
+              <li>Install Google Analytics 4</li>
+              <li>Connect booking calendar to GHL</li>
+              <li>Connect domain (or buy new one)</li>
+              <li>Test all forms — ensure leads flow to GHL CRM</li>
+              <li>Mobile test on iPhone + Android</li>
+            </ul>
+          </div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-head ph-purple">📣 Day 7–10 — Launch Ads</div>
+          <div class="platform-body">
+            <ul>
+              <li>Create Ad Account in Meta Business Manager</li>
+              <li>Add client's credit card to Ad Account</li>
+              <li>Design ad creative in Canva</li>
+              <li>Build Instant Lead Form with all fields</li>
+              <li>Set up campaign, targeting, budget in Ads Manager</li>
+              <li>Connect Facebook Lead Form → GHL via integration</li>
+              <li>Test: submit a test lead — confirm GHL receives it + alert fires</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top:20px">
+        <div class="tip-label">📞 Kickoff Call Script (Day 1)</div>
+        <p>Start every client relationship with a 30-minute kickoff Zoom: <strong>(1)</strong> Review what's happening Week 1 and Week 2. <strong>(2)</strong> Explain the 5-min lead alert — how it works, what they need to do (answer the phone!). <strong>(3)</strong> Set expectations: "Ads need 7–14 days to optimize — don't judge results in week 1." <strong>(4)</strong> Get them excited: "By month 2, you'll have a fully automated patient pipeline running 24/7." <strong>(5)</strong> Confirm all access has been shared. Make this call count — it sets the tone for the entire relationship.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 10: FINANCES                                   -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-break"><hr/><span>Your Numbers</span><hr/></div>
+<div class="section-wrap" id="finances">
+  <div class="sec-header">
+    <div class="plan-badge badge-teal">Section 10 — Your Profit</div>
+    <h2>💰 Your Real Costs vs. What You Charge</h2>
+    <p>Here is the complete financial breakdown per plan — what you spend to deliver, what you earn, and your profit margin.</p>
+  </div>
+  <div class="content-card">
+    <div class="cc-section">
+      <div class="step-title">📊 Per-Client Monthly Cost & Profit Breakdown</div>
+
+      <table class="cost-table">
+        <thead>
+          <tr><th>Cost Item</th><th>Plan 1</th><th>Plan 2</th><th>Plan 3</th><th>Plan 4</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>GoHighLevel (shared across all clients)</td><td>~$30</td><td>~$30</td><td>~$30</td><td>~$30</td></tr>
+          <tr><td>Twilio (SMS + calls)</td><td>~$8</td><td>~$12</td><td>~$18</td><td>~$25</td></tr>
+          <tr><td>Website Build (GHL template = free / Upwork = $500 one-time ÷ 3 months)</td><td>$0–$167</td><td>$0–$167</td><td>$167</td><td>$200</td></tr>
+          <tr><td>Media Buyer (outsourced on Upwork — optional)</td><td>$0</td><td>$400</td><td>$700</td><td>$1,200</td></tr>
+          <tr><td>Google Ads Management (outsourced — Plan 4 only)</td><td>—</td><td>—</td><td>—</td><td>$500</td></tr>
+          <tr><td>BrightLocal for SEO citations</td><td>—</td><td>—</td><td>$29</td><td>$29</td></tr>
+          <tr><td>Video ad creation (Fiverr — optional)</td><td>—</td><td>—</td><td>~$100</td><td>~$150</td></tr>
+          <tr><td>Canva Pro (shared)</td><td>~$3</td><td>~$3</td><td>~$3</td><td>~$3</td></tr>
+          <tr><td><strong>Total Monthly Cost (Estimate)</strong></td><td class="orange-val">~$211</td><td class="orange-val">~$612</td><td class="orange-val">~$1,047</td><td class="orange-val">~$2,137</td></tr>
+          <tr><td><strong>Your Monthly Revenue</strong></td><td class="blue-val">$1,997</td><td class="blue-val">$2,697</td><td class="blue-val">$3,497</td><td class="blue-val">$4,997</td></tr>
+          <tr class="profit-row"><td><strong>Your Monthly Profit per Client</strong></td><td class="green-val">~$1,786</td><td class="green-val">~$2,085</td><td class="green-val">~$2,450</td><td class="green-val">~$2,860</td></tr>
+          <tr class="profit-row"><td><strong>Profit Margin</strong></td><td class="green-val">89%</td><td class="green-val">77%</td><td class="green-val">70%</td><td class="green-val">57%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="info-box green" style="margin-top:20px">
+        <div class="info-box-icon">🚀</div>
+        <div class="info-box-body">
+          <h5>Revenue Milestone Targets</h5>
+          <p>
+            <strong>5 clients (mix of plans):</strong> ~$12,000–$15,000/month revenue · $9,000–$12,000 profit<br/>
+            <strong>10 clients:</strong> ~$25,000–$35,000/month revenue · Time to hire a VA<br/>
+            <strong>20 clients:</strong> ~$50,000–$70,000/month revenue · Hire a media buyer full-time<br/>
+            <strong>50 clients:</strong> $100,000+/month · Full team, multiple account managers<br/>
+            GoHighLevel agencies report average MRR of $10,000–$50,000 within their first year.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cc-section">
+      <div class="step-title">📅 Your First 90-Day Action Plan</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot">1</div>
+          <div class="tl-content">
+            <h5>Week 1–2: Foundation Setup</h5>
+            <p>Sign up for GoHighLevel ($297/mo) · Connect Twilio + Mailgun · Build your Dental Snapshot · Watch 10 hours of Ben Heath Meta ads on YouTube · Design your agency proposal deck in Canva · Set up your Aug8 Agency website</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot green">2</div>
+          <div class="tl-content">
+            <h5>Week 3–4: Land First Client</h5>
+            <p>Reach out to local dental practices via cold email or LinkedIn · Offer a 30-day pilot at a discounted rate · Sign contract · Complete full onboarding checklist · Launch website + ads · Activate 5-min lead alerts</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot orange">3</div>
+          <div class="tl-content">
+            <h5>Month 2: Prove Results + Client #2</h5>
+            <p>Generate first leads for client 1 · Show them the GHL dashboard + call recordings · Ask for a testimonial · Use those results to close client #2 · Begin hiring a part-time Upwork media buyer to free up your time</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot purple">4</div>
+          <div class="tl-content">
+            <h5>Month 3: Scale to 5 Clients</h5>
+            <p>With 2 case studies, outreach converts at 20%+ · Close clients 3, 4, and 5 · Hire a VA for daily monitoring tasks · You focus entirely on sales, strategy calls, and oversight · At 5 clients you're generating $10,000–$15,000/month</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="background:var(--navy);padding:40px 24px;text-align:center;margin-top:40px">
+  <div style="font-family:var(--font-h);font-weight:800;font-size:1.5rem;color:#fff;margin-bottom:8px">Aug<span style="color:#00c2ff">8</span> Agency</div>
+  <p style="font-size:.85rem;color:rgba(255,255,255,.5);max-width:500px;margin:0 auto 16px">This is your internal operations playbook. Keep it updated as you learn and scale. Every system here can be improved — document what works for your specific market.</p>
+  <div style="font-size:.78rem;color:rgba(255,255,255,.3)">© 2025 Aug8 Agency · aug8agency@gmail.com · Confidential Internal Document</div>
+</div>
+
+</body>
+</html>
