@@ -18,7 +18,7 @@ This project demonstrates clean frontend development, structured documentation, 
 ✨ Features
 📚 Structured Playbook
 
-A step-by-step guide for improving dental service delivery and operational efficiency.
+A step-by-step guide for improving dental service delivery and operational efficiency. **remove this after and a structured playbook**
 
 🧭 Easy Navigation
 
