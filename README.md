@@ -2,6 +2,8 @@
 
 A modern web platform designed to showcase and document a Dental Delivery Playbook — a structured guide that helps dental clinics and healthcare teams streamline their workflow, patient management, and service delivery.
 
+**remove this after and fill the lines gaps**
+
 🔗 Live Demo
 https://aug8-dental-delivery-playbook.vercel.app/
 
